@@ -7,11 +7,9 @@ const RouteView = {
 }
 export const asyncRouterMap = [
   {
-
     path: '/',
     name: 'index',
     component: BasicLayout,
-    meta: { title: 'menu.home' },
     redirect: '/dashboard/workplace',
     children: [
       {
@@ -21,9 +19,10 @@ export const asyncRouterMap = [
         component: RouteView,
         children: [
           {
-            path: '/dashboard/analysis/:pageNo([1-9]\\d*)?',
-            name: 'Analysis',
-            component: () => import('@/views/dashboard/Analysis'),
+            path: '/dashboard/workplace',
+            name: 'Workplace',
+            component: () => import('@/views/dashboard/Workplace'),
+            meta: { title: 'menu.dashboard.workplace', keepAlive: true, permission: ['dashboard'] }
           }
         ]
       }

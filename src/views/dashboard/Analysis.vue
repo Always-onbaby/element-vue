@@ -3,6 +3,9 @@
 </template>
 <script>
 export default {
+  mounted() {
+    console.log('a')
+  },
   data() {
     return {}
   }
