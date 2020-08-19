@@ -17,6 +17,7 @@ const defaultRoutePath = '/dashboard/workplace'
 //   router.addRoutes(store.getters.addRouters)
 // })
 router.beforeEach((to, from, next) => {
+  console.log('1')
   NProgress.start()
   if (storage.get(ACCESS_TOKEN)) {
     if (to.path === loginRoutePath) {
